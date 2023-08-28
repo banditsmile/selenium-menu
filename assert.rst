@@ -3,7 +3,8 @@
 
 在Selenium中我们在做自动化测试时常无法判断一个元素是否真的显示出来了，因此会各种报错，接下来我们对这些操作进行判断，如果显示出了我们预期的值，那么就进行下一步操作，否则就关闭或者暂停几秒然后再判断，这里我要跟大家说Selenium中的一个模块-----Expected_Conditions，简称为EC，如下所示：
 
-.. code-block:: python
+::
+
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     from selenium.webdriver.support import expected_conditions as EC
@@ -19,7 +20,8 @@
 
 这里其实就是判断当前页面的标题是否是我们给定的文本，可以看出这里为True，说明是。它不光就一个方法哦，还有其它的，小编在这里大致说下，如下所示：
 
-.. code-block:: python
+::
+
     EC.title_contains('')(c)#判断页面标题是否包含给定的字符串
     EC.presence_of_element_located('')(c) #判断某个元素是否加载到dom树里，该元素不一定可见
     EC.url_contains('')(c) #判断当前url是否包含给定的字符串

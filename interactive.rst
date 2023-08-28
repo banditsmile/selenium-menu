@@ -2,7 +2,8 @@
 ------
 模拟键盘输入和按键
 
-.. code-block:: python
+::
+
     from selenium.webdriver.common.keys import Keys
     c.find_element(By.ID,'kw').send_keys('python')#输出Python
     c.find_element(By.ID,'kw').send_keys(Keys.ENTER)#回车键
@@ -11,7 +12,8 @@
 
 这里列举出了一个最简单的键盘输入和鼠标点击的例子，不过我们在Selenium中可以使用更为高逼格的操作，那么是什么了？当然是咱们的鼠标键盘监听事件来触发事件啦，而且它里面的方法的确也很多样化，满足小编日常的骚操作不在话下，如下所示：
 
-.. code-block:: python
+::
+
     click(on_element=None)                 #鼠标左键单击
     click_and_hold(on_element=None)        #单击鼠标左键，不松开
     context_click(on_element=None)         #单击鼠标右键
@@ -33,7 +35,8 @@
 
 以上就是咱们鼠标和键盘的全部操作了，小编将用一个例子带大家零基础入门。如下：
 
-.. code-block:: python
+::
+
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     import time

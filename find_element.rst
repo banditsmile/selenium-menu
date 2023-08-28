@@ -25,7 +25,8 @@ find_elements_by_xpath               #通过Xpath语法来查找所有元素
 
 可以看到输入框的ID为KW，Name为WD，这里我们选择ID，选择ID有三种方法，如下：
 
-.. code-block:: python
+::
+
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     c=webdriver.Chrome(executable_path=r'C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe')

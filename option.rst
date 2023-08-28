@@ -2,7 +2,8 @@
 ===================
 我们可以通过给当前操作的对象一些选项来增强交互能力，如下：
 
-.. code-block:: python
+::
+
     from selenium import webdriver
     from selenium.webdriver.common.by import By
     import time
@@ -20,7 +21,8 @@
 
 这个时候就实现了咱们的无界面浏览了，也就是不用打开浏览器即可自动返回执行的结果。不过你可别以为选项就那么一两个，那可是多到你怀疑人生的，例如：
 
-.. code-block:: python
+::
+
     o.add_argument('--window-size=600,600') #设置窗口大小
     o.add_argument('--incognito') #无痕模式
     o.add_argument('--disable-infobars') #去掉chrome正受到自动测试软件的控制的提示
@@ -46,7 +48,8 @@
 
 其实选项的添加无非就是分为以下这几种，如下：
 
-.. code-block:: python
+::
+
     o.set_headless()          #设置启动无界面化
     o.binary_location(value)  #设置chrome二进制文件位置
     o.add_argument(arg)               #添加启动参数
