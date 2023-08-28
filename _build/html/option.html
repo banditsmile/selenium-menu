@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>选项操作 &mdash; selenium-menu  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=6c0686cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="框架操作(Frame/IFrame)" href="frame.html" />
+    <link rel="prev" title="键盘鼠标操作" href="interactive.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            selenium-menu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preview.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">安装与导入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connect.html">与浏览器建立连接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="find_element.html">查找元素</a></li>
+<li class="toctree-l1"><a class="reference internal" href="element.html">元素操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operation.html">浏览器操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">键盘鼠标操作</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">选项操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">框架操作(Frame/IFrame)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alert.html">Alert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assert.html">判断</a></li>
+<li class="toctree-l1"><a class="reference internal" href="select.html">选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wait.html">显示等待和隐式等待</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">总结</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">selenium-menu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">选项操作</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/option.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>选项操作<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<p>我们可以通过给当前操作的对象一些选项来增强交互能力，如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.chrome.options</span> <span class="kn">import</span> <span class="n">Options</span>
+<span class="n">o</span><span class="o">=</span><span class="n">Options</span><span class="p">()</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--headless&#39;</span><span class="p">)</span><span class="c1">#无界面浏览</span>
+<span class="n">c</span><span class="o">=</span><span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe&#39;</span><span class="p">,</span><span class="n">chrome_options</span><span class="o">=</span><span class="n">o</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.baidu.com&#39;</span><span class="p">)</span>
+<span class="n">kw1</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="s1">&#39;kw&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>这个时候就实现了咱们的无界面浏览了，也就是不用打开浏览器即可自动返回执行的结果。不过你可别以为选项就那么一两个，那可是多到你怀疑人生的，例如：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--window-size=600,600&#39;</span><span class="p">)</span> <span class="c1">#设置窗口大小</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--incognito&#39;</span><span class="p">)</span> <span class="c1">#无痕模式</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--disable-infobars&#39;</span><span class="p">)</span> <span class="c1">#去掉chrome正受到自动测试软件的控制的提示</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;user-agent=&quot;XXXX&quot;&#39;</span><span class="p">)</span> <span class="c1">#添加请求头</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s2">&quot;--proxy-server=http://200.130.123.43:3456&quot;</span><span class="p">)</span><span class="c1">#代理服务器访问</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span><span class="s1">&#39;excludeSwitches&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;enable-automation&#39;</span><span class="p">])</span><span class="c1">#开发者模式</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span><span class="s2">&quot;prefs&quot;</span><span class="p">,{</span><span class="s2">&quot;profile.managed_default_content_settings.images&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">})</span><span class="c1">#禁止加载图片</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span><span class="s1">&#39;prefs&#39;</span><span class="p">,</span>
+<span class="p">{</span><span class="s1">&#39;profile.default_content_setting_values&#39;</span><span class="p">:{</span><span class="s1">&#39;notifications&#39;</span><span class="p">:</span><span class="mi">2</span><span class="p">}})</span> <span class="c1">#禁用浏览器弹窗</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;blink-settings=imagesEnabled=false&#39;</span><span class="p">)</span>  <span class="c1">#禁止加载图片</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;lang=zh_CN.UTF-8&#39;</span><span class="p">)</span> <span class="c1">#设置默认编码为utf-8</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_extension</span><span class="p">(</span><span class="n">create_proxyauth_extension</span><span class="p">(</span>
+           <span class="n">proxy_host</span><span class="o">=</span><span class="s1">&#39;host&#39;</span><span class="p">,</span>
+           <span class="n">proxy_port</span><span class="o">=</span><span class="s1">&#39;port&#39;</span><span class="p">,</span>
+           <span class="n">proxy_username</span><span class="o">=</span><span class="s2">&quot;username&quot;</span><span class="p">,</span>
+           <span class="n">proxy_password</span><span class="o">=</span><span class="s2">&quot;password&quot;</span>
+       <span class="p">))</span><span class="c1"># 设置有账号密码的代理</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--disable-gpu&#39;</span><span class="p">)</span>  <span class="c1"># 这个属性可以规避谷歌的部分bug</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--disable-javascript&#39;</span><span class="p">)</span>  <span class="c1"># 禁用javascript</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--hide-scrollbars&#39;</span><span class="p">)</span>  <span class="c1"># 隐藏滚动条</span>
+<span class="n">o</span><span class="o">.</span><span class="n">binary_location</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;C:\Users\Administrator\AppData\Local\Google\Chrome\Application&quot;</span> <span class="c1">#指定浏览器位置</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;--no-sandbox&#39;</span><span class="p">)</span>  <span class="c1">#解决DevToolsActivePort文件不存在的报错</span>
+</pre></div>
+</div>
+<p>其实选项的添加无非就是分为以下这几种，如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">o</span><span class="o">.</span><span class="n">set_headless</span><span class="p">()</span>          <span class="c1">#设置启动无界面化</span>
+<span class="n">o</span><span class="o">.</span><span class="n">binary_location</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>  <span class="c1">#设置chrome二进制文件位置</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>               <span class="c1">#添加启动参数</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_extension</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>                <span class="c1">#添加指定路径下的扩展应用</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_encoded_extension</span><span class="p">(</span><span class="n">base64</span><span class="p">)</span>      <span class="c1">#添加经过Base64编码的扩展应用</span>
+<span class="n">o</span><span class="o">.</span><span class="n">add_experimental_option</span><span class="p">(</span><span class="n">name</span><span class="p">,</span><span class="n">value</span><span class="p">)</span>         <span class="c1">#添加实验性质的选项</span>
+<span class="n">o</span><span class="o">.</span><span class="n">debugger_address</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>                <span class="c1">#设置调试器地址</span>
+<span class="n">o</span><span class="o">.</span><span class="n">to_capabilities</span><span class="p">()</span>                    <span class="c1">#获取当前浏览器的所有信息</span>
+</pre></div>
+</div>
+<p>虽然选项很多，但是我们真正能用到的不多，一般就是无痕模式或者禁用JavaScript和图片来快速获取到相关信息。虽然我们上面使用的是Options方法，但是在实际应用中建议大家使用的ChromeOptions方法。</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="interactive.html" class="btn btn-neutral float-left" title="键盘鼠标操作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="frame.html" class="btn btn-neutral float-right" title="框架操作(Frame/IFrame)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, carl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

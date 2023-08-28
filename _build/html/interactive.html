@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>键盘鼠标操作 &mdash; selenium-menu  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=6c0686cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="选项操作" href="option.html" />
+    <link rel="prev" title="浏览器操作" href="operation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            selenium-menu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preview.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">安装与导入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connect.html">与浏览器建立连接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="find_element.html">查找元素</a></li>
+<li class="toctree-l1"><a class="reference internal" href="element.html">元素操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="operation.html">浏览器操作</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">键盘鼠标操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="option.html">选项操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">框架操作(Frame/IFrame)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alert.html">Alert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assert.html">判断</a></li>
+<li class="toctree-l1"><a class="reference internal" href="select.html">选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wait.html">显示等待和隐式等待</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">总结</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">selenium-menu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">键盘鼠标操作</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/interactive.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>键盘鼠标操作<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<p>模拟键盘输入和按键</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
+<span class="n">c</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="s1">&#39;kw&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="s1">&#39;python&#39;</span><span class="p">)</span><span class="c1">#输出Python</span>
+<span class="n">c</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="s1">&#39;kw&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">ENTER</span><span class="p">)</span><span class="c1">#回车键</span>
+<span class="n">c</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="s1">&#39;kw&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">click</span><span class="p">()</span><span class="c1">#点击</span>
+</pre></div>
+</div>
+<p>这里列举出了一个最简单的键盘输入和鼠标点击的例子，不过我们在Selenium中可以使用更为高逼格的操作，那么是什么了？当然是咱们的鼠标键盘监听事件来触发事件啦，而且它里面的方法的确也很多样化，满足小编日常的骚操作不在话下，如下所示：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">click</span><span class="p">(</span><span class="n">on_element</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>                 <span class="c1">#鼠标左键单击</span>
+<span class="n">click_and_hold</span><span class="p">(</span><span class="n">on_element</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>        <span class="c1">#单击鼠标左键，不松开</span>
+<span class="n">context_click</span><span class="p">(</span><span class="n">on_element</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>         <span class="c1">#单击鼠标右键</span>
+<span class="n">double_click</span><span class="p">(</span><span class="n">on_element</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>          <span class="c1">#双击鼠标左键</span>
+<span class="n">drag_and_drop</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="n">target</span><span class="p">)</span>           <span class="c1">#拖拽到某个元素然后松开</span>
+<span class="n">drag_and_drop_by_offset</span><span class="p">(</span><span class="n">source</span><span class="p">,</span><span class="n">xoffset</span><span class="p">,</span><span class="n">yoffset</span><span class="p">)</span> <span class="c1">#拖拽到某个坐标然后松开</span>
+<span class="n">key_down</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="n">element</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>     <span class="c1">#按下键盘上的某个键</span>
+<span class="n">key_up</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">element</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>      <span class="c1">#松开键盘上的某个键</span>
+<span class="n">move_by_offset</span><span class="p">(</span><span class="n">xoffset</span><span class="p">,</span> <span class="n">yoffset</span><span class="p">)</span>  <span class="c1">#鼠标从当前位置移动到某个坐标</span>
+<span class="n">move_to_element</span><span class="p">(</span><span class="n">to_element</span><span class="p">)</span>        <span class="c1">#鼠标移动到某个元素</span>
+<span class="n">move_to_element_with_offset</span><span class="p">(</span><span class="n">to_element</span><span class="p">,</span> <span class="n">xoffset</span><span class="p">,</span> <span class="n">yoffset</span><span class="p">)</span> <span class="c1">#移动到距某个元素（左上角坐标）多少距离的位置</span>
+<span class="n">pause</span><span class="p">(</span><span class="n">seconds</span><span class="p">)</span>                  <span class="c1">#暂停所有输入(指定持续时间以秒为单位)</span>
+<span class="n">perform</span><span class="p">()</span>                       <span class="c1">#执行所有操作</span>
+<span class="n">reset_actions</span><span class="p">()</span>                 <span class="c1">#结束已经存在的操作并重置</span>
+<span class="n">release</span><span class="p">(</span><span class="n">on_element</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>       <span class="c1">#在某个元素位置松开鼠标左键</span>
+<span class="n">send_keys</span><span class="p">(</span><span class="o">*</span><span class="n">keys_to_send</span><span class="p">)</span>        <span class="c1">#发送某个键或者输入文本到当前焦点的元素</span>
+<span class="n">send_keys_to_element</span><span class="p">(</span><span class="n">element</span><span class="p">,</span> <span class="o">*</span><span class="n">keys_to_send</span><span class="p">)</span> <span class="c1">#发送某个键到指定元素</span>
+</pre></div>
+</div>
+<p>以上就是咱们鼠标和键盘的全部操作了，小编将用一个例子带大家零基础入门。如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.keys</span> <span class="kn">import</span> <span class="n">Keys</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.action_chains</span> <span class="kn">import</span> <span class="n">ActionChains</span>
+<span class="n">c</span><span class="o">=</span><span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.baidu.com&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">=</span><span class="n">ActionChains</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">kw1</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="s1">&#39;kw&#39;</span><span class="p">)</span>
+<span class="n">tj</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="s1">&#39;su&#39;</span><span class="p">)</span>
+<span class="n">tj</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">CONTROL</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">)</span> <span class="c1">#复制</span>
+<span class="n">a</span><span class="o">.</span><span class="n">drag_and_drop</span><span class="p">(</span><span class="n">kw1</span><span class="p">,</span><span class="n">tj</span><span class="p">)</span><span class="o">.</span><span class="n">perform</span><span class="p">()</span><span class="c1">#从输入框拖动到搜索按钮</span>
+<span class="n">kw1</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">CONTROL</span><span class="p">,</span><span class="s1">&#39;v&#39;</span><span class="p">)</span><span class="c1">#粘贴</span>
+<span class="n">tj</span><span class="o">.</span><span class="n">send_keys</span><span class="p">(</span><span class="n">Keys</span><span class="o">.</span><span class="n">ENTER</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>这里我们通过对事件的监控，进行复制和粘贴，这里涉及到一个组合键的知识，大家注意。</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="operation.html" class="btn btn-neutral float-left" title="浏览器操作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="option.html" class="btn btn-neutral float-right" title="选项操作" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, carl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

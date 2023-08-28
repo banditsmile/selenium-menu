@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>浏览器操作 &mdash; selenium-menu  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=6c0686cc"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="键盘鼠标操作" href="interactive.html" />
+    <link rel="prev" title="元素操作" href="element.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            selenium-menu
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="preview.html">前言</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">安装与导入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connect.html">与浏览器建立连接</a></li>
+<li class="toctree-l1"><a class="reference internal" href="find_element.html">查找元素</a></li>
+<li class="toctree-l1"><a class="reference internal" href="element.html">元素操作</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">浏览器操作</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#url">1.获取本页面URL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2.获取日志</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">3.窗口操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">4.设置延时</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">5.关闭</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">6.打印网页源代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">7.屏幕截图操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">8.前进后退刷新</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#js">9.执行JS代码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cookies">10.Cookies操作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">11.获取标题内容</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">12.获取当前浏览器名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">13.全局超时时间</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="interactive.html">键盘鼠标操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="option.html">选项操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="frame.html">框架操作(Frame/IFrame)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="alert.html">Alert</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assert.html">判断</a></li>
+<li class="toctree-l1"><a class="reference internal" href="select.html">选择</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wait.html">显示等待和隐式等待</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conclusion.html">总结</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">selenium-menu</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">浏览器操作</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/operation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>浏览器操作<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<section id="url">
+<h2>1.获取本页面URL<a class="headerlink" href="#url" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">current_url</span>
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>2.获取日志<a class="headerlink" href="#id2" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">log_types</span>  <span class="c1">#获取当前日志类型</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_log</span><span class="p">(</span><span class="s1">&#39;browser&#39;</span><span class="p">)</span><span class="c1">#浏览器操作日志</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_log</span><span class="p">(</span><span class="s1">&#39;driver&#39;</span><span class="p">)</span> <span class="c1">#设备日志</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_log</span><span class="p">(</span><span class="s1">&#39;client&#39;</span><span class="p">)</span> <span class="c1">#客户端日志</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_log</span><span class="p">(</span><span class="s1">&#39;server&#39;</span><span class="p">)</span> <span class="c1">#服务端日志</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>3.窗口操作<a class="headerlink" href="#id3" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">maximize_window</span><span class="p">()</span><span class="c1">#最大化</span>
+<span class="n">c</span><span class="o">.</span><span class="n">fullscreen_window</span><span class="p">()</span> <span class="c1">#全屏</span>
+<span class="n">c</span><span class="o">.</span><span class="n">minimize_window</span><span class="p">()</span> <span class="c1">#最小化</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_window_position</span><span class="p">()</span> <span class="c1">#获取窗口的坐标</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_window_rect</span><span class="p">()</span><span class="c1">#获取窗口的大小和坐标</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_window_size</span><span class="p">()</span><span class="c1">#获取窗口的大小</span>
+<span class="n">c</span><span class="o">.</span><span class="n">set_window_position</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span><span class="c1">#设置窗口的坐标</span>
+<span class="n">c</span><span class="o">.</span><span class="n">set_window_rect</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>    <span class="c1">#设置窗口的大小和坐标</span>
+<span class="n">c</span><span class="o">.</span><span class="n">set_window_size</span><span class="p">(</span><span class="mi">400</span><span class="p">,</span><span class="mi">600</span><span class="p">)</span><span class="c1">#设置窗口的大小</span>
+<span class="n">c</span><span class="o">.</span><span class="n">current_window_handle</span>   <span class="c1">#返回当前窗口的句柄</span>
+<span class="n">c</span><span class="o">.</span><span class="n">window_handles</span>         <span class="c1">#返回当前会话中的所有窗口的句柄</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h2>4.设置延时<a class="headerlink" href="#id4" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">set_script_timeout</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">#设置脚本延时五秒后执行</span>
+<span class="n">c</span><span class="o">.</span><span class="n">set_page_load_timeout</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="c1">#设置页面读取时间延时五秒</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>5.关闭<a class="headerlink" href="#id5" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">close</span><span class="p">()</span> <span class="c1">#关闭当前标签页</span>
+<span class="n">c</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span> <span class="c1">#关闭浏览器并关闭驱动</span>
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h2>6.打印网页源代码<a class="headerlink" href="#id6" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">page_source</span>
+</pre></div>
+</div>
+</section>
+<section id="id7">
+<h2>7.屏幕截图操作<a class="headerlink" href="#id7" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">save_screenshot</span><span class="p">(</span><span class="s1">&#39;1.png&#39;</span><span class="p">)</span><span class="c1">#截图，只支持PNG格式</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_screenshot_as_png</span><span class="p">()</span> <span class="c1">#获取当前窗口的截图作为二进制数据</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_screenshot_as_base64</span><span class="p">()</span> <span class="c1">#获取当前窗口的截图作为base64编码的字符串</span>
+</pre></div>
+</div>
+</section>
+<section id="id8">
+<h2>8.前进后退刷新<a class="headerlink" href="#id8" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">forward</span><span class="p">()</span> <span class="c1">#前进</span>
+<span class="n">c</span><span class="o">.</span><span class="n">back</span><span class="p">()</span>  <span class="c1">#后退</span>
+<span class="n">c</span><span class="o">.</span><span class="n">refresh</span><span class="p">()</span><span class="c1">#刷新</span>
+</pre></div>
+</div>
+</section>
+<section id="js">
+<h2>9.执行JS代码<a class="headerlink" href="#js" title="Permalink to this heading"></a></h2>
+<p>在Selenium中也可以自定义JS代码并带到当前页面中去执行，如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">selenium</span> <span class="kn">import</span> <span class="n">webdriver</span>
+<span class="kn">from</span> <span class="nn">selenium.webdriver.common.by</span> <span class="kn">import</span> <span class="n">By</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="n">c</span><span class="o">=</span><span class="n">webdriver</span><span class="o">.</span><span class="n">Chrome</span><span class="p">(</span><span class="n">executable_path</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;C:\Users\Administrator\AppData\Local\Google\Chrome\Application\chromedriver.exe&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;https://www.baidu.com&#39;</span><span class="p">)</span>
+<span class="n">kw1</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">find_element</span><span class="p">(</span><span class="n">By</span><span class="o">.</span><span class="n">ID</span><span class="p">,</span><span class="s1">&#39;kw&#39;</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute_script</span><span class="p">(</span><span class="s2">&quot;alert(&#39;hello&#39;)&quot;</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>这里我使用一个JS中的函数来执行屏幕提示的功能，成功被执行。</p>
+</section>
+<section id="cookies">
+<h2>10.Cookies操作<a class="headerlink" href="#cookies" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">get_cookie</span><span class="p">(</span><span class="s1">&#39;BAIDUID&#39;</span><span class="p">)</span> <span class="c1">#获取指定键的Cookies</span>
+<span class="n">c</span><span class="o">.</span><span class="n">get_cookies</span><span class="p">()</span>         <span class="c1">#获取所有的Cookies</span>
+<span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">get_cookies</span><span class="p">():</span>
+   <span class="n">x</span><span class="o">=</span><span class="n">y</span>
+   <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;expiry&#39;</span><span class="p">):</span>
+       <span class="n">x</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;expiry&#39;</span><span class="p">)</span>
+   <span class="n">c</span><span class="o">.</span><span class="n">add_cookie</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1">#添加Cookies</span>
+<span class="n">c</span><span class="o">.</span><span class="n">delete_cookie</span><span class="p">(</span><span class="s1">&#39;BAIDUID&#39;</span><span class="p">)</span> <span class="c1">#删除指定键的Cookies内容</span>
+<span class="n">c</span><span class="o">.</span><span class="n">delete_all_cookies</span><span class="p">()</span> <span class="c1">#删除所有cookies</span>
+</pre></div>
+</div>
+</section>
+<section id="id9">
+<h2>11.获取标题内容<a class="headerlink" href="#id9" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">title</span>
+</pre></div>
+</div>
+</section>
+<section id="id10">
+<h2>12.获取当前浏览器名<a class="headerlink" href="#id10" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">name</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h2>13.全局超时时间<a class="headerlink" href="#id11" title="Permalink to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">implicitly_wait</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="element.html" class="btn btn-neutral float-left" title="元素操作" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="interactive.html" class="btn btn-neutral float-right" title="键盘鼠标操作" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, carl.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
