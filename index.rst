@@ -18,3 +18,16 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+* :ref:`preview`
+* :ref:`install`
+* :ref:`connect`
+* :ref:`find_element`
+* :ref:`element`
+* :ref:`operation`
+* :ref:`option`
+* :ref:`frame`
+* :ref:`alert`
+* :ref:`assert`
+* :ref:`select`
+* :ref:`wait`
+* :ref:`conclusion`
